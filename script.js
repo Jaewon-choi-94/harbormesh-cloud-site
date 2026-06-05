@@ -67,13 +67,13 @@ function applyConfigText() {
     el.textContent = config.brandName || "HarborMesh Cloud";
   });
   document.querySelectorAll("[data-company]").forEach((el) => {
-    el.textContent = config.companyName || "YOUR HONG KONG COMPANY LIMITED";
+    el.textContent = config.companyName || "DOUBLE J PARTNERS LIMITED";
   });
   document.querySelectorAll("[data-brn]").forEach((el) => {
-    el.textContent = config.businessRegistrationNumber || "YOUR BR NUMBER";
+    el.textContent = config.businessRegistrationNumber || "77498577";
   });
   document.querySelectorAll("[data-office]").forEach((el) => {
-    el.textContent = config.registeredOffice || "YOUR REGISTERED OFFICE ADDRESS, HONG KONG";
+    el.textContent = config.registeredOffice || "RM 409, Beverley Commercial Centre, 87-105 Chatham Road South, Tsim Sha Tsui, Hong Kong";
   });
   document.querySelectorAll("[data-support-email]").forEach((el) => {
     el.textContent = config.supportEmail || "support@harbormeshcloud.com";

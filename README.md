@@ -28,9 +28,9 @@ Other domain ideas to check: **gpuhaiku.com**, **nodeharbor.cloud**, **computeha
 Open `site-config.js` and replace:
 
 ```js
-companyName: "YOUR HONG KONG COMPANY LIMITED",
-businessRegistrationNumber: "YOUR BR NUMBER",
-registeredOffice: "YOUR REGISTERED OFFICE ADDRESS, HONG KONG",
+companyName: "DOUBLE J PARTNERS LIMITED",
+businessRegistrationNumber: "77498577",
+registeredOffice: "RM 409, Beverley Commercial Centre, 87-105 Chatham Road South, Tsim Sha Tsui, Hong Kong",
 supportEmail: "support@harbormeshcloud.com",
 salesEmail: "sales@harbormeshcloud.com",
 legalEmail: "legal@harbormeshcloud.com",

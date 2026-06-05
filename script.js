@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyConfigText();
 
   document.querySelectorAll(".checkout").forEach((button) => {
+    if (button.tagName === "A" && button.href) return;
     button.addEventListener("click", () => checkout(button.dataset.plan));
   });
 

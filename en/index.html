@@ -17,9 +17,9 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/site-config.js"></script>
-  <script defer src="/script.js"></script>
+  <script defer src="/script.js?v=checkout-hardfix-20260628-ts2"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script defer src="/auth.js"></script>
+  <script defer src="/auth.js?v=checkout-hardfix-20260628-ts2"></script>
 </head>
 <body>
   <header class="site-header">
@@ -294,22 +294,5 @@
       <a href="/ko" hreflang="ko">한국어</a>
     </nav>
   </footer>
-
-  <div class="modal" id="quoteModal" aria-hidden="true">
-    <div class="modal-panel">
-      <button class="modal-close" aria-label="Close quote form">×</button>
-      <div class="eyebrow">Quote request</div>
-      <h2>Enterprise GPU capacity request</h2>
-      <p class="muted">This form opens your email client with the required information. Replace the details before sending.</p>
-      <form id="quoteForm">
-        <label>Company name<input name="company" placeholder="Your company"></label>
-        <label>Workload type<input name="workload" placeholder="AI inference, rendering, generation, batch compute"></label>
-        <label>Target daily budget in HKD<input name="budget" placeholder="e.g. HK$60,000/day"></label>
-        <label>Required GPU tier<input name="tier" placeholder="Tier S / Tier A / Tier B / Mixed"></label>
-        <label>Expected start date<input name="date" placeholder="YYYY-MM-DD"></label>
-        <button class="button primary full" type="submit">Prepare email</button>
-      </form>
-    </div>
-  </div>
 </body>
 </html>

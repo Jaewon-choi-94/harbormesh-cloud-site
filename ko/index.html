@@ -17,9 +17,9 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/site-config.js"></script>
-  <script defer src="/script.js"></script>
+  <script defer src="/script.js?v=checkout-hardfix-20260628-ts2"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script defer src="/auth.js"></script>
+  <script defer src="/auth.js?v=checkout-hardfix-20260628-ts2"></script>
 </head>
 <body>
   <header class="site-header">
@@ -294,22 +294,5 @@
       <a href="/en" hreflang="en">English</a>
     </nav>
   </footer>
-
-  <div class="modal" id="quoteModal" aria-hidden="true">
-    <div class="modal-panel">
-      <button class="modal-close" aria-label="견적 요청 폼 닫기">×</button>
-      <div class="eyebrow">견적 요청</div>
-      <h2>엔터프라이즈 GPU 용량 요청</h2>
-      <p class="muted">이 폼은 필요한 정보를 포함한 이메일 작성 창을 엽니다. 발송 전 내용을 수정해 주세요.</p>
-      <form id="quoteForm">
-        <label>회사명<input name="company" placeholder="회사명"></label>
-        <label>워크로드 유형<input name="workload" placeholder="AI 추론, rendering, generation, batch compute"></label>
-        <label>목표 일일 예산<input name="budget" placeholder="예: HK$60,000/day"></label>
-        <label>필요 GPU 등급<input name="tier" placeholder="Tier S / Tier A / Tier B / 혼합"></label>
-        <label>예상 시작일<input name="date" placeholder="YYYY-MM-DD"></label>
-        <button class="button primary full" type="submit">이메일 작성</button>
-      </form>
-    </div>
-  </div>
 </body>
 </html>

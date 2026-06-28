@@ -64,9 +64,7 @@ export default async function handler(request) {
     return json({ error: "Invalid or expired session." }, 401);
   }
 
-  const user = data.user;
-
-  if (!isEmailVerified(user)) {
+  if (!isEmailVerified(data.user)) {
     return json({ error: "Email verification required." }, 403);
   }
 

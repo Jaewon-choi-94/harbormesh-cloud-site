@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/site-config.js"></script>
   <script defer src="/script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="/auth.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -38,6 +40,7 @@
         <a class="active" href="/ko" hreflang="ko">KR</a>
       </div>
       <a class="header-cta" href="#pricing">요금 보기</a>
+      <span data-auth-state></span>
     </div>
   </header>
 
@@ -184,7 +187,7 @@
             <li>이메일 지원</li>
             <li>사용량 로그 내보내기</li>
           </ul>
-          <a class="button full primary checkout" data-plan="starter" href="https://buy.stripe.com/eVqfZidk86h95pdg397bW01" target="_blank" rel="noopener noreferrer">GPU 컴퓨트 접근권 구매</a>
+          <button class="button full primary checkout" data-protected-checkout data-plan="starter" type="button">GPU 컴퓨트 접근권 구매</button>
         </article>
 
         <article class="price-card">
@@ -197,7 +200,7 @@
             <li>Tier B / Tier A 라우팅</li>
             <li>일일 사용량 요약</li>
           </ul>
-          <button class="button full primary checkout" data-plan="builder">Builder 플랜 시작</button>
+          <button class="button full primary checkout" data-protected-checkout data-plan="builder" type="button">Builder 플랜 시작</button>
         </article>
 
         <article class="price-card highlighted">

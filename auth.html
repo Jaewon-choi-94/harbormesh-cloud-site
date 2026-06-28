@@ -1,0 +1,119 @@
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sign in | HarborMesh Cloud</title>
+
+  <meta name="description" content="Create or sign in to a HarborMesh Cloud account before opening protected payment links.">
+
+  <link rel="icon" href="/favicon.svg">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <script defer src="/site-config.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script defer src="/auth.js"></script>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <a class="brand" href="/" aria-label="HarborMesh Cloud home">
+
+      <span class="brand-mark">HM</span>
+
+      <span class="brand-text">HarborMesh Cloud</span>
+
+    </a>
+
+    <div class="header-actions">
+
+      <div class="language-switch" aria-label="Language selector">
+
+        <a class="active" href="/auth.html" hreflang="en">EN</a>
+
+        <a href="/ko" hreflang="ko">KR</a>
+
+      </div>
+
+      <span data-auth-state></span>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="auth-main">
+
+    <section class="auth-layout">
+
+      <div class="auth-panel">
+
+        <div class="eyebrow">Create account</div>
+
+        <h1>Sign up with email verification</h1>
+
+        <p class="muted">Use your email as your account ID. Payment links open only after login and email verification.</p>
+
+        <form data-signup-form>
+
+          <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+
+          <label>Password<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+
+          <label>Name<input name="full_name" autocomplete="name" required></label>
+
+          <label>Mobile phone<input name="phone" autocomplete="tel" required></label>
+
+          <label>Address<input name="address" autocomplete="street-address" required></label>
+
+          <button class="button primary full" type="submit">Create account</button>
+
+        </form>
+
+        <p data-auth-message class="auth-message"></p>
+
+      </div>
+
+
+
+      <div class="auth-panel">
+
+        <div class="eyebrow">Existing customer</div>
+
+        <h2>Sign in</h2>
+
+        <p class="muted">Sign in with your verified email and password.</p>
+
+        <form data-login-form>
+
+          <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+
+          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+
+          <button class="button secondary full" type="submit">Sign in</button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
+

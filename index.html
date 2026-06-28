@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/site-config.js"></script>
   <script defer src="/script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="/auth.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -38,6 +40,7 @@
         <a href="/ko" hreflang="ko">KR</a>
       </div>
       <a class="header-cta" href="#pricing">View pricing</a>
+      <span data-auth-state></span>
     </div>
   </header>
 
@@ -184,7 +187,7 @@
             <li>Email support</li>
             <li>Usage log export</li>
           </ul>
-          <a class="button full primary checkout" data-plan="starter" href="https://buy.stripe.com/eVqfZidk86h95pdg397bW01" target="_blank" rel="noopener noreferrer">Buy GPU compute access</a>
+          <button class="button full primary checkout" data-protected-checkout data-plan="starter" type="button">Buy GPU compute access</button>
         </article>
 
         <article class="price-card">
@@ -197,7 +200,7 @@
             <li>Tier B / Tier A routing</li>
             <li>Daily usage summary</li>
           </ul>
-          <button class="button full primary checkout" data-plan="builder">Start builder plan</button>
+          <button class="button full primary checkout" data-protected-checkout data-plan="builder" type="button">Start builder plan</button>
         </article>
 
         <article class="price-card highlighted">

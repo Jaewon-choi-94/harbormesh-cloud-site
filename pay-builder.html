@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Builder payment check | HarborMesh Cloud</title>
-  <meta name="description" content="Stripe checkout opens after login and email verification. Future terms acceptance/signature checks will also be enforced on this page.">
+  <title>Builder payment agreement | HarborMesh Cloud</title>
+  <meta name="description" content="After login and email verification, Stripe checkout opens only after agreement checkbox and signature are completed.">
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/site-config.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script defer src="/pay-gate.js?v=pay-gate-20260628-v1"></script>
+  <script defer src="/pay-gate.js?v=agreement-signature-gate-20260628-v1"></script>
 </head>
 <body data-plan="builder" data-lang="en">
   <header class="site-header">
@@ -22,11 +22,11 @@
     </div>
   </header>
 
-  <main class="auth-main">
-    <div class="auth-panel">
+  <main class="auth-main agreement-main">
+    <div class="auth-panel agreement-panel" data-pay-gate-root>
       <div class="eyebrow">Protected checkout</div>
-      <h1>Opening Builder checkout.</h1>
-      <p class="muted">Stripe checkout opens after login and email verification. Future terms acceptance/signature checks will also be enforced on this page.</p>
+      <h1>Agreement and signature required before payment.</h1>
+      <p class="muted">After login and email verification, Stripe checkout opens only after agreement checkbox and signature are completed.</p>
       <p data-pay-gate-message class="auth-message">Checking...</p>
     </div>
   </main>

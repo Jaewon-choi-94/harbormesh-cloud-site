@@ -545,3 +545,95 @@ input {
 
 }
 
+/* agreement-signature-gate:start */
+.agreement-main {
+  padding: 56px 20px;
+}
+
+.agreement-panel {
+  max-width: 980px;
+}
+
+.agreement-scroll {
+  margin: 24px 0;
+  padding: 22px;
+  max-height: 360px;
+  overflow: auto;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.04);
+  text-align: left;
+}
+
+.agreement-scroll h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}
+
+.agreement-scroll p {
+  margin: 0 0 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.agreement-form {
+  display: grid;
+  gap: 18px;
+}
+
+.agreement-check {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  text-align: left;
+  line-height: 1.55;
+}
+
+.agreement-check input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.signature-block {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.signature-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+}
+
+.signature-head strong {
+  color: var(--text);
+}
+
+.signature-pad {
+  width: 100%;
+  min-height: 180px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 16px;
+  background: #ffffff;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.signature-clear {
+  justify-self: start;
+}
+
+button[disabled],
+.button[disabled] {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+/* agreement-signature-gate:end */

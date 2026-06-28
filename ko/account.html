@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>내 계정 | HarborMesh Cloud</title>
+  <meta name="description" content="HarborMesh Cloud 계정의 이메일 인증 상태와 보호된 결제 접근을 확인하세요.">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/site-config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="/auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/ko" aria-label="HarborMesh Cloud 홈">
+      <span class="brand-mark">HM</span>
+      <span class="brand-text">HarborMesh Cloud</span>
+    </a>
+    <div class="header-actions">
+      <div class="language-switch" aria-label="언어 선택">
+        <a href="/account.html" hreflang="en">EN</a>
+        <a class="active" href="/ko/account.html" hreflang="ko">KR</a>
+      </div>
+      <span data-auth-state></span>
+    </div>
+  </header>
+
+  <main class="auth-main" data-account-page>
+    <div class="auth-panel">
+      <h1>계정 정보를 불러오는 중...</h1>
+    </div>
+  </main>
+</body>
+</html>

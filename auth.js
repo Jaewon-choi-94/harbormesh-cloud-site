@@ -32,6 +32,14 @@ function withQuery(path, params) {
   return query ? `${path}?${query}` : path;
 }
 
+function getPaymentLinkForPlan(plan) {
+  const links = {
+    starter: "https://buy.stripe.com/eVqfZidk86h95pdg397bW01",
+    builder: "https://buy.stripe.com/eVq5kE93S8ph3h5cQX7bW05"
+  };
+  return links[plan] || "";
+}
+
 function getSupabaseClient() {
   const authConfig = getAuthConfig();
   if (!window.supabase || !authConfig.supabaseUrl || !authConfig.supabaseAnonKey) {
@@ -229,6 +237,12 @@ async function handleLogout() {
 }
 
 async function startProtectedCheckout(plan) {
+  const paymentLink = getPaymentLinkForPlan(plan || "starter");
+  if (!paymentLink) {
+    setAuthMessage(authText("Checkout is not available.", "결제를 열 수 없습니다."), "error");
+    return;
+  }
+
   const client = getSupabaseClient();
   if (!client) {
     window.location.href = getAuthRedirect(plan);
@@ -249,31 +263,14 @@ async function startProtectedCheckout(plan) {
     return;
   }
 
-  const response = await fetch(`/api/checkout?plan=${encodeURIComponent(plan)}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/json"
-    }
-  });
-
-  const payload = await response.json().catch(() => ({}));
-
-  if (!response.ok || !payload.url) {
-    setAuthMessage(payload.error || authText("Checkout is not available.", "결제를 열 수 없습니다."), "error");
-    if (response.status === 401 || response.status === 403) {
-      window.location.href = getAuthRedirect(plan);
-    }
-    return;
-  }
-
-  window.location.href = payload.url;
+  window.location.href = paymentLink;
 }
 
 function wireProtectedCheckoutButtons() {
   document.querySelectorAll("[data-protected-checkout]").forEach((button) => {
     button.addEventListener("click", async (event) => {
       event.preventDefault();
+      event.stopPropagation();
       const plan = button.dataset.plan || "starter";
       await startProtectedCheckout(plan);
     });

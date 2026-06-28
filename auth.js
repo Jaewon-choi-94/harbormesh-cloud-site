@@ -220,6 +220,12 @@ async function handleLogin(event) {
 
   await ensureCustomerProfile(user);
   const params = new URLSearchParams(window.location.search);
+  const next = params.get("next");
+  if (next && next.startsWith("/")) {
+    window.location.href = next;
+    return;
+  }
+
   const plan = params.get("plan");
   if (plan) {
     await startProtectedCheckout(plan);

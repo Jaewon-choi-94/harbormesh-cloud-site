@@ -17,9 +17,9 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/site-config.js"></script>
-  <script defer src="/script.js?v=direct-stripe-checkout-20260628"></script>
+  <script defer src="/script.js?v=pay-gate-20260628-v1"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script defer src="/auth.js?v=direct-stripe-checkout-20260628"></script>
+  <script defer src="/auth.js?v=pay-gate-20260628-v1"></script>
 </head>
 <body>
   <header class="site-header">
@@ -187,7 +187,7 @@
             <li>이메일 지원</li>
             <li>사용량 로그 내보내기</li>
           </ul>
-          <button class="button full primary checkout" data-protected-checkout data-plan="starter" type="button">GPU 컴퓨트 접근권 구매</button>
+          <a class="button full primary checkout" href="/ko/pay-starter.html" data-plan="starter">GPU 컴퓨트 접근권 구매</a>
         </article>
 
         <article class="price-card">
@@ -200,7 +200,7 @@
             <li>Tier B / Tier A 라우팅</li>
             <li>일일 사용량 요약</li>
           </ul>
-          <button class="button full primary checkout" data-protected-checkout data-plan="builder" type="button">Builder 플랜 시작</button>
+          <a class="button full primary checkout" href="/ko/pay-builder.html" data-plan="builder">Builder 플랜 시작</a>
         </article>
 
         <article class="price-card highlighted">

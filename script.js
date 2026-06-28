@@ -2,6 +2,10 @@ function getConfig() {
   return window.HARBORMESH_CONFIG || {};
 }
 
+function getCurrentLanguage() {
+  return (document.documentElement.lang || "en").toLowerCase().startsWith("ko") ? "ko" : "en";
+}
+
 function checkout(plan) {
   const config = getConfig();
   const link = config.checkoutLinks && config.checkoutLinks[plan];
@@ -44,10 +48,25 @@ function initQuoteForm() {
     const tier = data.get("tier") || "";
     const date = data.get("date") || "";
     const to = config.salesEmail || "sales@harbormeshcloud.com";
+    const language = getCurrentLanguage();
 
-    const subject = encodeURIComponent(`GPU capacity quote request — ${plan}`);
+    const subject = encodeURIComponent(
+      language === "ko"
+        ? `GPU 용량 견적 요청 — ${plan}`
+        : `GPU capacity quote request — ${plan}`
+    );
+
     const body = encodeURIComponent(
-`Company name: ${company}
+      language === "ko"
+        ? `회사명: ${company}
+요청 플랜: ${plan}
+워크로드 유형: ${workload}
+목표 일일 예산(HKD): ${budget}
+필요 GPU 등급: ${tier}
+예상 시작일: ${date}
+
+가용 용량, 가격, 온보딩 요건을 안내해 주세요.`
+        : `Company name: ${company}
 Requested plan: ${plan}
 Workload type: ${workload}
 Target daily budget in HKD: ${budget}

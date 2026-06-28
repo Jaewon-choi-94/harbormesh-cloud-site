@@ -17,11 +17,20 @@ function checkout(plan) {
 }
 
 function openQuote(plan) {
-  const modal = document.getElementById("quoteModal");
-  if (!modal) return;
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
-  modal.dataset.plan = plan || "enterprise";
+  const config = getConfig();
+  const language = getCurrentLanguage();
+  const to = config.salesEmail || "sales@harbormeshcloud.com";
+  const subject = encodeURIComponent(
+    language === "ko"
+      ? `GPU 용량 문의 — ${plan || "enterprise"}`
+      : `GPU capacity inquiry — ${plan || "enterprise"}`
+  );
+  const body = encodeURIComponent(
+    language === "ko"
+      ? "필요한 GPU 용량, 예산, 시작일을 입력해 주세요."
+      : "Please describe your GPU capacity requirement, budget, and expected start date."
+  );
+  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 }
 
 function closeQuote() {
@@ -112,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyConfigText();
 
   document.querySelectorAll(".checkout").forEach((button) => {
+    if (button.hasAttribute("data-protected-checkout")) return;
     if (button.tagName === "A" && button.href) return;
     button.addEventListener("click", () => checkout(button.dataset.plan));
   });
